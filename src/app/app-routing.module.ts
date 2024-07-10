@@ -3,8 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    // Aca cargamos el componente Stanalone componen de forma perezosa.
     path: 'maps',
     loadChildren: () => import('./maps/maps.module').then( m => m.MapsModule ),
+  },
+  {
+    path: 'alone',
+    loadComponent: () => import('./alone/pages/alone-page/alone-page.component').then( m => m.AlonePageComponent ),
   },
   {
     path: '**',
